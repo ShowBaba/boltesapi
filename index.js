@@ -53,7 +53,7 @@ app.use('/api/emails', routes);
 
 app.get('*', (req, res) => {
     res.status(400).json({
-      message: 'This is Project Save It. Please see documentation @ {https://github.com/ShowBaba/boltesapi.git} for the proper routes.',
+      message: 'This is Boltes API. Please see documentation @ {https://github.com/ShowBaba/boltesapi.git} for the proper routes.',
     });
   });
 
