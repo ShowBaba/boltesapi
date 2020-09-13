@@ -45,11 +45,17 @@ mongoose.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true, useNewUr
     }
 });
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
     res.status(200).json({ message: 'Welcome to Boltes API' });
 });
 
 app.use('/api/emails', routes);
+
+app.get('*', (req, res) => {
+    res.status(400).json({
+      message: 'This is Project Save It. Please see documentation @ {https://github.com/ShowBaba/boltesapi.git} for the proper routes.',
+    });
+  });
 
 app.listen(port, (req, res) => {
     console.log(`Running server on port ${port}`);

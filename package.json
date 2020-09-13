@@ -5,11 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShowBaba/boltesapi.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "rest",
+    "api"
+  ],
+  "author": "Sam",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShowBaba/boltesapi/issues"
+  },
+  "homepage": "https://github.com/ShowBaba/boltesapi#readme",
   "dependencies": {
     "@hapi/boom": "^9.1.0",
     "boom": "^7.3.0",
