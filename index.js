@@ -45,7 +45,7 @@ mongoose.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true, useNewUr
     }
 });
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     res.status(200).json({ message: 'Welcome to Boltes API' });
 });
 
