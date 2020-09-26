@@ -23,7 +23,7 @@ exports.addEmail = async (req, res) => {
 exports.getEmails = (req, res) => {
     try {
         Email.find()
-            .select('_id email date').then((emails) => {
+            .then((emails) => {
                 res.status(200).json({
                     emails: emails
                 });
