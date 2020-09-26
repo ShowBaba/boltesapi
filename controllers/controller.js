@@ -1,35 +1,27 @@
 const boom = require('@hapi/boom');
 const Email = require('../models/model');
 
-exports.addEmail = async (req, res) => {
-    // try {
-    const email = new Email({
+exports.addEmail = (req, res) => {
+    Email.create({
         email: req.body.email
-    });
-
-    try {
-        email.save()
-            .then(
-                res.status(200).json({
-                    messages: "Email Saved"
-                })
-            );
-
-    } catch (err) {
-        throw boom.boomify(err);
-    }
+    })
+        .then((email) => {
+            res.status(200).json({
+                message: "Email " + req.body.email + " saved."
+            });
+        })
+        .catch((err) => {
+            throw boom.boomify(err);
+        })
 };
 
 exports.getEmails = (req, res) => {
-    try {
-        Email.find()
-            .then((emails) => {
-                res.status(200).json({
-                    emails: emails
-                });
+    Email.find()
+        .then((emails) => {
+            res.status(200).json({
+                emails: emails
             });
-
-    } catch (err) {
-        throw boom.boomify(err);
-    }
+        }).catch((err) => {
+            throw boom.boomify(err);
+        })
 };
